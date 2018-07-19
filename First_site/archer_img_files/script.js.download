@@ -1,0 +1,243 @@
+jQuery(document).ready(function($) {
+	// Cache the elements in use
+	$elemCache = {
+		window : $(window),
+		topHeaderContainer : $('#header-container'),
+		fixedHeaderContainer : $('#fixed-header-container'),
+		quoteSlider : $('div.quote-slider')
+	};
+	
+	var mql = window.matchMedia('(max-width: 1023px)');
+	mql.addListener(responsiveEvents);
+	responsiveEvents(mql);
+	
+	function responsiveEvents(mql) {
+		if(mql.matches) {
+			
+		} else {
+			/* Large screen */
+			
+			/* Scrolling */
+			var bottomOfMainHeader = $elemCache.topHeaderContainer.offset().top + $elemCache.topHeaderContainer.outerHeight();
+
+			var scrollHandling = {
+				allow : true,
+				reallow : function() {
+					scrollHandling.allow = true;
+				},
+				delay : 25, // ms
+				checks : {
+					fixedHeader : true,
+					topHeader : false
+				}
+			};
+
+			$(window).scroll(function(e) {
+				if(scrollHandling.allow) {
+					if(scrollHandling.checks.fixedHeader) {
+						// We're checking if the fixed header should be faded in
+						if($elemCache.window.scrollTop() > bottomOfMainHeader) {
+							$elemCache.fixedHeaderContainer.stop().fadeIn(400);
+							scrollHandling.checks.fixedHeader = false;
+						}
+					} else {
+						if($elemCache.window.scrollTop() <= bottomOfMainHeader) {
+							$elemCache.fixedHeaderContainer.stop().fadeOut(400);
+							scrollHandling.checks.fixedHeader = true;
+						}
+					}
+
+					scrollHandling.allow = false;
+					setTimeout(scrollHandling.reallow, scrollHandling.delay); // Reallow the scroll after the delay time.
+				}
+			});
+			
+			
+			/* 6 Boxes animation */
+			$('.block-container-content').hover(function() {
+				/* In */
+				$('.box-overlay', this).attr('data-old-height', $('.box-overlay', this).get(0).scrollHeight);
+
+				$('.box-overlay', this).stop().animate({
+					height : '100%'
+				}, 800, function() {
+					$('.full-details', this).fadeIn(400, function() {
+					});
+				});
+				$('.just-title', this).stop().fadeOut(400);
+				$('.full-details', this).stop().fadeIn(400);
+			}, function() {
+				$('.box-overlay', this).stop().animate({
+					height : $('.box-overlay', this).attr('data-old-height')
+				}, 800);
+				$('.just-title', this).stop().fadeIn(400);
+				$('.full-details', this).stop().fadeOut(400);
+			});
+			
+		}
+	};
+	
+	/* ALWAYS */
+	
+	/* Create carousel */
+	if($('.bxSliderHome').length !== 0) {
+		var slider = $('.bxSliderHome').bxSlider({
+			'pager' : false,
+			'auto' : true,
+			'pause' : 4000,
+			'autoStart' : true,
+			'controls' : false
+		});
+	}
+	
+	if($('.bxSlider').length !== 0) {
+		var slider = $('.bxSlider').bxSlider({
+			'pager' : false,
+			'auto' : true,
+			'pause' : 4000,
+			'autoStart' : true,
+			'controls' : false,
+			'pager' : true,
+			'pagerSelector' : $('.bx-pager')
+		});
+	}
+	
+	/* Carousel events */
+	$('.carousel-left').on('click', function(e) {
+		slider.goToPrevSlide();
+	});
+	$('.carousel-right').on('click', function(e) {
+		slider.goToNextSlide();
+	});
+	
+	/* Smooth link scrolling */
+	$('.carousel-down').click(function(e) {
+		var trgt = $(this).attr('href');
+		// console.log(trgt);
+
+		// get the top offset of the target anchor
+		var target_offset = $(trgt).offset();
+		var target_top = target_offset.top - 48;
+		
+		$('html, body').animate({scrollTop : target_top}, 500);
+		e.preventDefault();
+	});
+	
+	/* Header */
+	$('.submenu').hover(function(e) {
+		e.preventDefault();
+		$('ul', this).fadeToggle(400);
+	});
+	
+	/* Mailing list */
+	/* $('.mailing-list-content').on('click', '.mailing-list-close-button', function(e) {
+		e.preventDefault;
+		e.stopPropagation;
+		e.stopImmediatePropagation;
+		
+		$('#mailing-list-window').fadeOut(400);
+	});
+	$('.mailing-list-close').on('click', function(e) {
+		e.preventDefault;
+		e.stopPropagation;
+		
+		$('#mailing-list-window').fadeOut(400);
+	});
+	$('.open-mailing-list').on('click', function(e) {
+		e.preventDefault();
+		
+		$('#mailing-list-window').fadeIn(400);
+	}); */
+	
+	/* MAP */
+	function initMap() {
+		var map = new google.maps.Map(document.getElementById('google-maps'), {
+			center : { lat : 51.511495, lng : -0.133928},
+			zoom : 18,
+			zoomControl : false,
+			disableDefaultUI : true,
+			disableDoubleClickZoom : true,
+			draggable : false,
+			scrollwheel : false
+		});
+		
+		var marker = new google.maps.Marker({
+			position : { lat : 51.511495, lng : -0.133928},
+			map : map
+		});
+	};
+	
+	if($('#google-maps').length) {
+		initMap();
+	}
+	
+	/* Small screen */
+	$('#mobile-menu').on('click', function(e) {
+		e.preventDefault();
+
+		$('#mobile-overlay').toggleClass('display');
+	});
+	
+	var asevideo = videojs('as-video');
+	
+	$('#video-popup-close').on('click',  function(e) {
+		e.preventDefault();
+		
+		// $('#video-popup').addClass('hidden');
+		$('#video-popup').fadeOut(400);
+		asevideo.pause();
+		asevideo.currentTime(0);
+	});
+	$('#open-video-overlay').on('click', function(e) {
+		e.preventDefault();
+		
+		// $('#video-popup').removeClass('hidden');
+		$('#video-popup').fadeIn(400);
+	});
+	
+	
+	// Mailing list
+	function openMailingList() {
+		// Open the form and set the cookie.
+		$.featherlight($('#signup-popup div'));
+		Cookies.set('archerstreet-signup-form-shown', 'true'); // No expires means this is a session cookie.
+	};
+	
+	console.log('substring : ', window.location.hash.substr(1));
+	
+	if(window.location.hash.substr(1) === "sutb_form_location") {
+		// Someone's filled out the form - open the form directly
+		console.log('opening form directly');
+		openMailingList();
+	} else {
+		// They haven't - check to see if they've seen the form before
+		if(!Cookies.get('archerstreet-signup-form-shown')) {
+			console.log('hasn\'t seen form, opening in 4s');
+			
+			// They haven't seen the form - set a timer to show it off
+			var formTimer = setTimeout(function() {
+				openMailingList();
+			}, 4000);
+		} else {
+			console.log('has seen form before');
+		};
+	};
+	
+	$('#open-mailing-list').on('click', function(e) {
+		e.preventDefault();
+		openMailingList();
+	});
+	
+	 
+	/* Press quote bits */
+	if($elemCache.quoteSlider.length !== 0) {
+		var quoteFader = $elemCache.quoteSlider.bxSlider({
+			'speed' : 500,
+			'mode' : 'fade',
+			'controls' : false,
+			'pager' : false,
+			'auto' : true,
+			'pause' : 5000
+		});
+	};
+});
