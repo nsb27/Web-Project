@@ -9,7 +9,7 @@ html {
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
-body 
+body {
   margin: 25;
 }
 article,
@@ -1615,8 +1615,8 @@ pre code {
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
-  padding-right: 0px;
-  padding-left: 0px;
+  padding-right: 1px;
+  padding-left: 1px;
 }
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   float: left;
@@ -2255,6 +2255,7 @@ caption {
   padding-top: 8px;
   padding-bottom: 8px;
   color: #777;
+  text-align: left;
 }
 th {
   text-align: left;
@@ -4845,6 +4846,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   display: inline;
   padding: .2em .6em .3em;
   font-size: 75%;
+  font-weight: bold;
   line-height: 1;
   color: #fff;
   text-align: center;
@@ -4909,18 +4911,17 @@ a.label:focus {
 }
 .badge {
   display: inline-block;
-  min-width: 100%;
+  min-width: 10px;
   padding: 3px 7px;
   font-size: 12px;
   font-weight: bold;
   line-height: 1;
-  color: #FEFEFE;
+  color: #fff;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
-  background-color: #191717;
+  background-color: #777;
   border-radius: 10px;
-  padding-bottom: 15px;
 }
 .badge:empty {
   display: none;
@@ -6770,12 +6771,12 @@ button.close {
   overflow: hidden;
   opacity: 0;
   filter: alpha(opacity=0);
-  width: 90%;
+  width: 70%;
   height: 81%;
-  left: 5%;
+  left: 15%;
   top: 10%;
-  border-radius: 8%;
-  border: 5px solid #FFF;
+  border-radius: 80%;
+  border: 2px solid #FFF;
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
   -webkit-transform: translate3d(50%,50%,0);
@@ -6783,7 +6784,7 @@ button.close {
 }
 
 .hovereffect:hover .overlay {
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0,0,0,0.3);
 }
 
 .hovereffect img {
@@ -6832,14 +6833,3 @@ button.close {
   filter: alpha(opacity=100);
   -webkit-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-}
-
-.crop img {
-  width:700px;
-  height:500px;;
-  width: 100%;
- }
-
- .title{
-    background-color: #160808;
-}

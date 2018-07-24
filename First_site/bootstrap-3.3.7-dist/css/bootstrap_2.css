@@ -2255,6 +2255,7 @@ caption {
   padding-top: 8px;
   padding-bottom: 8px;
   color: #777;
+  text-align: left;
 }
 th {
   text-align: left;
@@ -4845,6 +4846,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   display: inline;
   padding: .2em .6em .3em;
   font-size: 75%;
+  font-weight: bold;
   line-height: 1;
   color: #fff;
   text-align: center;
@@ -4909,18 +4911,17 @@ a.label:focus {
 }
 .badge {
   display: inline-block;
-  min-width: 100%;
+  min-width: 10px;
   padding: 3px 7px;
   font-size: 12px;
   font-weight: bold;
   line-height: 1;
-  color: #FEFEFE;
+  color: #fff;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
-  background-color: #191717;
+  background-color: #777;
   border-radius: 10px;
-  padding-bottom: 15px;
 }
 .badge:empty {
   display: none;
@@ -4999,12 +5000,12 @@ a.badge:focus {
 }
 .thumbnail {
   display: block;
-  padding: 100px;
-  margin-bottom: 100px;
+  padding: 50px;
+  margin-bottom: 25px;
   line-height: 1.42857143;
   background-color: #fff;
-  border: 10px solid #000000;
-  border-radius: 100px;
+  border: 5px solid #000000;
+  border-radius: 10px;
   -webkit-transition: border .2s ease-in-out;
        -o-transition: border .2s ease-in-out;
           transition: border .2s ease-in-out;
@@ -6770,11 +6771,11 @@ button.close {
   overflow: hidden;
   opacity: 0;
   filter: alpha(opacity=0);
-  width: 90%;
+  width: 70%;
   height: 81%;
-  left: 5%;
+  left: 15%;
   top: 10%;
-  border-radius: 8%;
+  border-radius: 80%;
   border: 5px solid #FFF;
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
@@ -6804,10 +6805,11 @@ button.close {
   text-align: center;
   position: relative;
   font-size: 17px;
+  font-weight: bold;
   padding: 10px;
   background-color: transparent;
   color: #FFF;
-  padding: 4em 0;
+  padding: -5em 0;
   opacity: 0;
   filter: alpha(opacity=0);
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
@@ -6818,7 +6820,7 @@ button.close {
 
 .hovereffect a, .hovereffect p {
   color: #FFF;
-  padding: -5em 0;
+  padding: -5em 10em;
   opacity: 0;
   filter: alpha(opacity=0);
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
@@ -6840,6 +6842,6 @@ button.close {
   width: 100%;
  }
 
- .title{
-    background-color: #160808;
+ .limit{
+    width:-70px;
 }
