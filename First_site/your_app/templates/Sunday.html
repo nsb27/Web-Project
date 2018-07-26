@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<title> Sunday Night </title>
+	<link href ='static/css/bootstrap.css' rel='stylesheet'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+</head>
+
+<body>
+<hr>
+                <div class='badge text-center'>
+                <h1 class='text-uppercase'> live for the weekend: </h1>
+                <h2>What will you do this weekend? Sunday </h2>
+        </div>
+
+                    <hr class='light my-4'>
+                    <div class='row text-center'>
+                    <h1 class='underline'> Our Sunday recomendations </h1>
+                    <br>
+                    <p1>Now for some Sunday is more about recovery, a time to chill out and rest your sore head. But for others it's another day to carry on the party.So here are some suggestions for whatever takes your fancy, from a Sunday roast feast fit for a king to great places to catch up with old friends, we've got you covered. </p1>
+                    <br>
+                    <br>
+                    <h5 class='strong'> ENJOY: </h5>
+                    </div>
+
+                    <hr class='light my-4'>
+
+                    <div class='container-fluid'>
+                    <div class='no-gutter'>
+
+                    <div class='crop col-lg-4'>
+                    <div class='hovereffect'>
+                    <img class=img-thumbnail' src='static/images/c2c.jpg' alt=''>
+                    <div class='overlay'>
+                    <h2> The Crown and Two Chairmen </h2>
+                    <p>
+                    <a class='info' href='#''>
+                    <p class='limit'> A great pub to go to on a Sunday, this is an amazing spot for celeb spotting as well! Plus they're dog friendly - unheard in central London.</p>
+                    <p> When to go: Wanting enjoy Soho but with mans best friend.</p>
+                    <a href='https://www.thecrownandtwochairmenw1.co.uk/'> Check out their website </a>
+                    </a>
+                    </p>
+                    </div>
+                    </div>
+                    </div>
+
+                    <div class='crop col-lg-4'>
+                    <div class='hovereffect'>
+                    <img class=img-thumbnail' src='static/images/The+Green+Website-5.jpg' alt=''>
+                    <div class='overlay'>
+                    <h2> The Green </h2>
+                    <p>
+                    <a class='info' href='#''>
+                    <p class='limit'> Hailed as one of the top places for a Sunday roast by TimeOut, this modern gastropub is a must. It boasts a gorgeous airy dining room and even better food. </p>
+					<p> When to go: For the best Sunday roast </p>
+					<a href='https://www.thegreenclerkenwell.com/'> Check out their website </a>
+                    </a>
+                    </p>
+                    </div>
+                    </div>
+                    </div>
+
+                    <div class='crop col-lg-4'>
+                    <div class='hovereffect'>
+                    <img class=img-thumbnail' src='static/images/freedom.jpg' alt=''>
+                    <div class='overlay'>
+                    <p>
+                    <h2> Freedom Bar </h2>
+                    <p>
+                    <a class='info' href='#''>
+                    <p class='limit'> An absolute must if you're in the Soho area. Great for a catch up with friends, and  plus it closes pretty late if you want to keep the party going! </p>
+                    <p> When to go: If you want to keep partying all the way into Sunday </p>
+                    <a href='https://freedombarsoho.com/'> Check out their website </a>
+                    </a>
+                    </p>
+                    </div>
+                    </div>
+                    </div>
+
+                    <div class='crop col-lg-4'>
+                    <div class='hovereffect'>
+                    <img class=img-thumbnail' src='static/images/The-Dove-18.jpg' alt=''>
+                    <div class='crop overlay'>
+                    <h2> The Dove </h2>
+                    <p>
+                    <a class='info' href='#''>
+                    <p class='limit'> In the mood to indulge in some history? The Dove has been around since the 17th century. Although truth be told, most visitors come for its lovely riverside terrace overlooking the houseboats. </p>
+                    <p> When to go: To enjoy history and a great view with a drink in hand </p>
+                    <a href='https://www.dovehammersmith.co.uk/'> Check out their website </a>
+                    </a>
+                    </p>
+                    </div>
+                    </div>
+                    </div>
+
+                    <div class='crop col-lg-4'>
+                    <div class='hovereffect'>
+                    <img class=img-thumbnail' src='static/images/hotbox.jpg' alt=''>
+                    <div class='overlay'>
+                    <h2> Hot Box </h2>
+                    <p>
+                    <a class='info' href='#''>
+                    <p class='limit'> Now no Sunday list is complete without the best place for a bloody mary, as its the ultimate in hangover cure. Hot Box's cocktail bar boasts a few variations of the classic for those feeling bold enough. </p>
+                    <p> When to go: For one of the best Bloody Marys in London </p>
+                    <a href='http://hotboxlondon.co.uk/'> Check out their website </a>
+                    </a>
+                    </p>
+                    </div>
+                    </div>
+                    </div>
+
+                    <div class='crop col-lg-4'>
+                    <div class='hovereffect'>
+                    <img class=img-thumbnail' src='static/images/ship.jpg' alt=''>
+                    <div class='overlay'>
+                    <h2> The Ship </h2>
+                    <p>
+                    <a class='info' href='#''>
+                    <p class='limit'> Now if you've not heard of this South London gem shame on you! The Ship boasts an epic outdoor area overlooking the Thames, making it the ultimate in lazy summer drinking. </p>
+                    <p> When to go: Chilled group drinks in the sunshine </p>
+                    <a href='https://www.theship.co.uk/'> Check out their website </a>
+                    </a>
+                    </p>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+
+                            <br>
+                 
+        <section class='row'>
+        <h2>One last thing before you go...</h2>
+        {% if temperature >= 20%} 
+        <p>As we are Londoner's we are of course obsessed with the weather its currently {{temperature}} degrees. Therefore as its so nice and warm - no tights needed this weekend!</p>
+        {% else %}
+        <p>As we are Londoner's we are of course obsessed with the weather its currently {{temperature}} degrees. Its going to be {{temprature}} so pretty cold - we recomend a jacket!</p>
+        {% endif %}
+
+        {% if clouds <=100%}
+        <p>Luckly there are no clouds in the sky today, so we hope you enjoy the sun. If the good old british weather does let you down though, you can always do your best singing in the rain impression:</p> 
+        <img class='img-circle' src='static/images/rain.jpg' alt=''>
+        {% else %}
+
+        <p> </p>
+        {% endif %}
+    </section>
+        <hr>     
+
+          <p class='text-center'> We hope you had a great weekend. If you took on our recomendations then we think you need this <a href='https://www.nhs.uk/live-well/alcohol-support/hangover-cures/'> website </a> </p>
+
+    </body>
+</html>

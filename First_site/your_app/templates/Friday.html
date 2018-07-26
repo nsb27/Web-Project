@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<title> Friday </title>
+    <link href ='static/css/bootstrap.css' rel='stylesheet'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+</head>
+<body>
+<hr>
+      <div class='badge text-center'>
+      <h1 class='text-uppercase'> live for the weekend: </h1>
+            <h2>What will you do this weekend? Friday </h2>  
+      <br>
+      </div>    
+
+            <hr>
+
+                <div class='row text-center'>
+                        <h1 class='underline'> Our Friday night recomendations </h1>
+                        <br>
+                        <p1> Friday we believe is all about unwinding after the work week and starting your weekend in style. So, we have rounded up some suggestions on the best way to enjoy your evening from a sophisticated cocktail to late night where you can let your hair down dancing.</p1>
+                        <br>
+                        <br>
+                        <h5 class='strong'> ENJOY: </h5>
+                    </div>
+                    <hr>
+
+                    <br>
+
+     
+                <div class='container-fluid'>
+                <div class='no-gutter'>
+
+                    <div class='crop col-lg-4'>
+                    <div class='hovereffect'>
+                    <img class=img-thumbnail' src='static/images/barsmith.jpg' alt=''>
+                    <div class='overlay'>
+                    <h2> Barsmith </h2>
+                    <p>
+                    <a class='info' href='#''>
+                    <p> Unwind after the working week with 2 for 1 cocktails until 9pm at this Farringdon staple. </p>
+                    <p>When to go: When you need to let your hair down after a long week</p>
+                    <a href='https://theblueskitchen.com/shoreditch/'> Check out their website </a>
+                    </a>
+                    </p>
+                    </div>
+                    </div>
+                    </div>
+
+                    <div class='crop col-lg-4'>
+                    <div class='hovereffect'>
+                    <img class=img-thumbnail' src='static/images/hopeandanchor.jpg' alt=''>
+                    <div class='overlay'>
+       
+                                 <h2> Hope and Anchor </h2>
+                    <p>
+                    <a class='info' href='#''>
+                    <p> With iconic outdoor garden huts and a massive screen, this South London pub guarantees a fun night! </p>
+                    <p> When to go: As a stop on a night out with your pals </p>
+                    <a href='https://www.hopeandanchorbrixton.co.uk'> Check out their website </a>
+                    </a>
+                    </p>
+                    </div>
+                    </div>
+                    </div>
+
+                    <div class='crop col-lg-4'>
+                    <div class='hovereffect'>
+                    <img class=img-thumbnail' src='static/images/roadhouse.jpg' alt=''>
+                    <div class='overlay'>
+                    <h2> RoadHouse </h2>
+                    <p>
+                    <a class='info' href='#''>
+                    <p> This American-diner style bar in Covent Garden is great for casual drinks and Friday night dancing if you’re in the mood! </p>
+                    <p> When to go: Night out with the crew </p>
+                    <a href='http://www.roadhouse.co.uk'> Check out their website </a>
+                    </a>
+                    </p>
+                    </div>
+                    </div>
+                    </div>
+
+                    <div class='crop col-lg-4'>
+                    <div class='hovereffect'>
+                    <img class=img-thumbnail' src='static/images/happinessforgets.jpg' alt=''>
+                    <div class='overlay'>
+                    <h2> Happiness Forgets </h2>
+                    <p>
+                    <a class='info' href='#''>
+                    <p>Hidden in Hoxton Square, this tiny cocktail bar guarantees a classy evening to unwind with friends. </p>
+                    <p> When to go:  For a classy night with someone special  </p>
+                    <a href='http://www.happinessforgets.com'> Check out their website </a>
+                    </a>
+                    </p>
+                    </div>
+                    </div>
+                    </div>
+
+                    <div class='crop col-lg-4'>
+                    <div class='hovereffect'>
+                    <img class=img-thumbnail' src='static/images/gordons.jpg' alt=''>
+                    <div class='overlay'>
+                    <h2> Gordon’s Wine Bar </h2>
+                    <p>
+                    <a class='info' href='#''>
+                    <p> When to go: Looking for a chilled night with wine to end the workweek </p>
+                    <p> With a cosy indoors and outdoor seating near Embankment station, this bar is great for wine and cheese lovers looking to unwind after the work week! </p>
+                    <a href='https://gordonswinebar.com'> Check out their website </a>
+                    </a>
+                    </p>
+                    </div>
+                    </div>
+                    </div>
+
+                    <div class='crop col-lg-4'>
+                    <div class='hovereffect'>
+                    <img class=img-thumbnail' src='static/images/evensandpeel_2.jpg' alt=''>
+                    <div class='overlay'>
+                    <h2> Evans and Peel Detective Agency </h2>
+                    <p>
+                    <a class='info' href='#''>
+                    <p> This gorgeous speakeasy in Earls Court is great for something a bit different to end the work week! </p>
+                    <p> When to go: for an evening of fun sophistication </p>
+                    <a href='http://www.evansandpeel.com/Appointments-Detectives'> Check out their website </a>
+                    </a>
+                    </p>
+                    </div>
+                    </div>
+                    </div>
+
+                </div>
+                </div>
+
+                            <br>
+                            <hr>
+        <section class='row'>
+
+        <h2>One last thing before you go...</h2>
+        {% if temperature >= 20%} 
+        <p>As we are Londoner's we are of course obsessed with the weather its currently {{temperature}} degrees. Therefore as its so nice and warm - no tights needed this weekend!</p>
+        {% else %}
+        <p>As we are Londoner's we are of course obsessed with the weather its currently {{temperature}} degrees. Its going to be {{temprature}} so pretty cold - we recomend a jacket!</p>
+        {% endif %}
+
+        {% if humidity <=70%}
+        <p>Dont worry the humidity is {{humidity}} so no risk of the Monica from friends look: </p> 
+        <img class='img-circle' src='static/images/Monica.jpg' alt=''>
+        {% else %}
+
+        <p> </p>
+        {% endif %}
+
+        </section>
+        <hr>  
+
+
+        <p class='text-center'> Did you enjoy your evening? Why not continue having a great weekend with our <a href='Saturday.html'> Sunday </a> recomendations </p>
+
+    </body>
+</html>			

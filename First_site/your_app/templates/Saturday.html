@@ -3,30 +3,40 @@
 <html lang='en'>
 <head>
 	<title> Saturday Night </title>
-	<link href ='bootstrap-3.3.7-dist/css/bootstrap.css' rel='stylesheet'>
+	<link href ='static/css/bootstrap.css' rel='stylesheet'>
 	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
-</head>
+    </head>
 
-<body>
- 
-      <div class='badge text-center'>
-      <h1 class='text-uppercase'> saturday </h1>  
-      <p1> Saturday we believe is all about a great night out. </p1>
-      <br>
-      <p1> So, we have rounded up some suggestions on the best way to enjoy your evening from a sophisticated cocktail to late night where you can let your hair down dancing. </p1>
-    </div>
+    <body>
+            <hr>
 
-        <hr class='light my-4'>
+            <br>
+            <div class='badge text-center'>
+            <h1 class='text-uppercase'> live for the weekend </h1>  
+            <h2>What will you do this weekend? saturday </h2>
+            <br>
+            </div>    
 
+            <hr>
 
-         <hr class='light my-4'>
+            <div class='row text-center'>
+            <h1 class='underline'> Our Saturday night recomendations </h1>
+            <br>
+            <p1>We have rounded up some suggestions on the best way to enjoy your evening from a sophisticated cocktail to late night where you can let your hair down dancing.</p1>
+            <br>
+            <br>
+            <h5 class='strong'> ENJOY: </h5>
+            </div>
 
-                <div class='container-fluid'>
-                <div class='row no-gutter'>
+            <hr>
+            <br>
+
+                    <div class='container-fluid'>
+                    <div class='no-gutter'>
 
                     <div class='crop col-lg-4'>
                     <div class='hovereffect'>
-                    <img class=img-thumbnail' src='Blue.jpg' alt=''>
+                    <img class=img-thumbnail' src='static/images/Blue.jpg' alt=''>
                     <div class='overlay'>
                     <h2> Blues Kitcen </h2>
                     <p>
@@ -42,7 +52,7 @@
 
                     <div class='crop col-lg-4'>
                     <div class='hovereffect'>
-                    <img class=img-thumbnail' src='Adventure_1.jpg' alt=''>
+                    <img class=img-thumbnail' src='static/images/Adventure_1.jpg' alt=''>
                     <div class='overlay'>
                     <h2> Adventure Bar </h2>
                     <p>
@@ -58,14 +68,14 @@
 
                     <div class='crop col-lg-4'>
                     <div class='hovereffect'>
-                    <img class=img-thumbnail' src='Archer.jpg' alt=''>
+                    <img class=img-thumbnail' src='static/images/Archer.jpg' alt=''>
                     <div class='overlay'>
                     <p>
                     <h2> Archer Street </h2>    
                     <p>
                     <a class='info' href='#''>
-                    <p class='limit'> Is the place to go for a Saturday night out in Soho. It has two rooms both with great music. Upstairs is the place to be through with singers making sure you keep the energy going. </p>
-                    <p> When to go: Special ccassion </p>
+                    <p class='limit'> Is the place to go for a Saturday night out in Soho. It has two rooms both with great music and singers dancing on the tables adding an upmarket karaoke vibe and making sure you keep the energy going. </p>
+                    <p> When to go: Special ccassion especially birthday night out </p>
                     <a href='https://www.archerstreet.co.uk'> Check out their website </a>
                     </a>
                     </p>
@@ -75,13 +85,13 @@
 
                     <div class='crop col-lg-4'>
                     <div class='hovereffect'>
-                    <img class=img-thumbnail' src='Maggies.jpg' alt=''>
+                    <img class=img-thumbnail' src='static/images/Maggies.jpg' alt=''>
                     <div class='crop overlay'>
                     <h2> Maggies </h2>
                     <p>
                     <a class='info' href='#''>
-                    <p class='limit'> A quintessentual West London Experience. A small dance and bar area makes the atomspehere ready to expload. Only go is you are really in the mood to go wild.</p>
-                    <p> When to go: Post an awards night but only if you have sensible shoes in your handbag. </p>
+                    <p class='limit'> A quintessentual West London Experience. A small dance area makes the atomspehere ready to expload, its a place to really let your hair down.</p>
+                    <p>When to go: Post an awards night when you have flats in your bag.</p>
                     <a href='https://www.maggies-club.com'> Check out their website </a>
                     </a>
                     </p>
@@ -91,7 +101,7 @@
 
                     <div class='crop col-lg-4'>
                     <div class='hovereffect'>
-                    <img class=img-thumbnail' src='POW.jpg' alt=''>
+                    <img class=img-thumbnail' src='static/images/POW.jpg' alt=''>
                     <div class='overlay'>
                     <h2> Prince of Wales </h2>
                     <p>
@@ -107,7 +117,7 @@
 
                     <div class='crop col-lg-4'>
                     <div class='hovereffect'>
-                    <img class=img-thumbnail' src='Queen.jpg' alt=''>
+                    <img class=img-thumbnail' src='static/images/Queen.jpg' alt=''>
                     <div class='overlay'>
                     <h2> The Old Queen's Head </h2>
                     <p>
@@ -125,9 +135,27 @@
                 </div>
 
                             <br>
+                 <hr>
+                 
+        <section class='row'>
+        <h2>One last thing before you go...</h2>
+        {% if temperature >= 20%} 
+        <p>As we are Londoner's we are of course obsessed with the weather its currently {{temperature}} degrees. Therefore as its so nice and warm - no tights needed this weekend!</p>
+        {% else %}
+        <p>As we are Londoner's we are of course obsessed with the weather its currently {{temperature}} degrees. Its going to be {{temprature}} so pretty cold - we recomend a jacket!</p>
+        {% endif %}
+
+        {% if wind >=1%}
+        <p>Its also a little windy at the momment, so be cacious about a dress. You dont want a momment like this: </p> 
+        <img class='img-circle' src='static/images/Monroe.jpg' alt=''>
+        {% else %}
+
+        <p> </p>
+        {% endif %}
+        </section>
+        <hr>           
 
 
-        <p class='text-center'> Did you enjoy your evening? Why not continue having a great weekend with our <a href='Sunday_1.html'> Sunday </a> recomendations </p>
-
-    </body>
-</html>			
+        <p class='text-center'> Did you enjoy your evening? Why not continue having a great weekend with our <a href='Sunday.html'> Sunday </a> recomendations </p>
+        </body>
+        </html>			
