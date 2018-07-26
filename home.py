@@ -2,6 +2,7 @@
 from flask import Flask, render_template, request
 
 from datetime import datetime 
+import requests
 
 app = Flask("HomeApp")
 
@@ -50,6 +51,54 @@ def get_weekend():
 	# year = date.year
 	
 	return calculate_age(datetime(date.year, date.month, date.day)) 
+
+@app.route("/friday")
+def friday():
+	endpoint = "http://api.openweathermap.org/data/2.5/weather"
+	payload = {"q": "london,UK", "units":"metric", "appid":"fe484c99838f8811a2ed7f7d0e72b97b"}
+	response = requests.get(endpoint, params=payload)
+	data = response.json()
+
+	temperature = data["main"]["temp"]
+	name = data["name"]
+	weather = data["weather"][0]["description"]
+	humidity = data ["main"] ["humidity"]
+
+	print u"It's {}C in {}, and the sky is {}{}".format(temperature, name, weather, humidity)
+	print data 
+	return render_template("Friday.html", temperature=temperature, name=name, weather= weather, humidity=humidity)
+
+@app.route("/saturday")
+def saturday():
+	endpoint = "http://api.openweathermap.org/data/2.5/weather"
+	payload = {"q": "london,UK", "units":"metric", "appid":"fe484c99838f8811a2ed7f7d0e72b97b"}
+	response = requests.get(endpoint, params=payload)
+	data = response.json()
+
+	temperature = data["main"]["temp"]
+	name = data["name"]
+	weather = data["weather"][0]["description"]
+	wind = data ["wind"]["speed"]
+
+	print u"It's {}C in {}, and the sky is {}{}".format(temperature, name, weather, wind)
+	print data 
+	return render_template("Saturday.html", temperature=temperature, name=name, weather= weather, wind=wind)
+
+@app.route("/sunday")
+def sunday():
+	endpoint = "http://api.openweathermap.org/data/2.5/weather"
+	payload = {"q": "london,UK", "units":"metric", "appid":"fe484c99838f8811a2ed7f7d0e72b97b"}
+	response = requests.get(endpoint, params=payload)
+	data = response.json()
+
+	temperature = data["main"]["temp"]
+	name = data["name"]
+	weather = data["weather"][0]["description"]
+	clouds = data ["clouds"]["all"]
+
+	print u"It's {}C in {}, and the sky is {}{}".format(temperature, name, weather, clouds)
+	print data 
+	return render_template("Sunday.html", temperature=temperature, name=name, weather= weather, clouds=clouds)
 
 # user_dob = get_dob()
 # user_year = datetime.strptime(user_dob,'%m/%d/%Y').year
